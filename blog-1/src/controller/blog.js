@@ -29,7 +29,15 @@ const getDetail = (id) => {
     }
 }
 
+const newBlog = ( blogData = {} ) => {
+    return {
+        id: 3 // 表示新建博客，插入到数据表里面的 id
+    }
+
+}
+
 module.exports = {
     getList,
-    getDetail
+    getDetail,
+    newBlog
 }
