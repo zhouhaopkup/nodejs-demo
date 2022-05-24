@@ -33,14 +33,18 @@ const getList = (author, keyword) => {
 }
 
 const getDetail = (id) => {
+    const sql = `select * from blogs where id='${id}'`
+    return exec(sql).then(rows => {
+        return rows[0]
+    })
     // 先返回假数据
-    return {
-        id: 1,
-        title: '标题A',
-        content: '内容A',
-        createTime: 1653298124978,
-        author: 'zhangsan'
-    }
+    // return {
+    //     id: 1,
+    //     title: '标题A',
+    //     content: '内容A',
+    //     createTime: 1653298124978,
+    //     author: 'zhangsan'
+    // }
 }
 
 const newBlog = ( blogData = {} ) => {
