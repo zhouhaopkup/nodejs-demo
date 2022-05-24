@@ -48,20 +48,44 @@ const getDetail = (id) => {
 }
 
 const newBlog = ( blogData = {} ) => {
-    return {
-        id: 3 // 表示新建博客，插入到数据表里面的 id
-    }
+    const title = blogData.title
+    const content = blogData.content
+    const author = blogData.author
+    const createTime = Date.now()
+
+    const sql = `
+        insert into blogs(title, content, createtime, author)
+        values('${title}','${content}',${createTime},'${author}');
+    `
+
+    return exec(sql).then(insertData => {
+        return {
+            id: insertData.insertId
+        }
+    })
+    // return {
+    //     id: 3 // 表示新建博客，插入到数据表里面的 id
+    // }
 }
 
 const updateBlog = (id, blogData = {}) => {
-    // id就是要更新博客的id
-    // blogData是一个博客对象，包含title content 属性
-    return true
+    const title = blogData.title 
+    const content = blogData.content
+
+    const sql = `
+        update blogs set title='${title}', content='${content}' where id=${id}
+    `
+
+    return exec(sql).then(updateData => {
+        return updateData.affectedRows > 0
+    })
 }
 
-const delBlog = (id) => {
-    // id就是要删除博客的id
-    return true
+const delBlog = (id, author) => {
+    const sql = `delete from blogs where id=${id} and author='${author}'`
+    return exec(sql).then(delData => {
+        return delData.affectedRows > 0
+    })
 }
 
 module.exports = {
