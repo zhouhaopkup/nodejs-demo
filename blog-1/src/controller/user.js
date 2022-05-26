@@ -7,11 +7,6 @@ const login = (username, password) => {
     return exec(sql).then(rows=>{
         return rows[0] || {}
     })
-    // 先使用假数据
-    // if(username === 'zhangsan' && password === '123') {
-    //     return true
-    // }
-    // return false
 }
 
 module.exports = {
