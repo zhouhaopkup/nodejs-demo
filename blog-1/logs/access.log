@@ -35,3 +35,6 @@ POST -- /api/blog/new -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWe
 GET -- /api/blog/list?isadmin=1 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36 -- 1653742644130
 POST -- /api/blog/del?id=7 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36 -- 1653742651714
 GET -- /api/blog/list?isadmin=1 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36 -- 1653742651751
+POST -- /api/blog/new -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36 -- 1653742951555
+GET -- /api/blog/list?isadmin=1 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36 -- 1653742953798
+GET -- /api/blog/detail?id=8 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36 -- 1653743004459
