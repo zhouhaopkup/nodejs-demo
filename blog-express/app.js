@@ -21,6 +21,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
+const session = require('express-session');
+let RedisStore = require('connect-redis')(session)
+const { createClient } = require("redis")
+let redisClient = createClient({ legacyMode: true})
+redisClient.connect().catch(console.error)
+app.use(session({
+  secret: 'WJiol#23123_',
+  cookie: {
+    path: '/', // 默认配置
+    httpOnly: true,// 默认配置
+    maxAge: 24 * 60 * 60 * 1000 
+  },
+  store: new RedisStore({ client: redisClient })
+}))
+
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/api/blog', blogRouter);
